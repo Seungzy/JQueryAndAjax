@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DummyJSON Products – Product Information Page</title>
+  <link rel="preconnect" href="https://code.jquery.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="wrap">
+      <h1>Product Catalog</h1>
+      <p class="subtitle">Browse our available products</p>
+
+      <div class="controls">
+        <div class="control">
+          <label for="productSearch">Search</label>
+          <input id="productSearch" type="search" placeholder="Type title / brand / category…" autocomplete="off" />
+        </div>
+
+        <div class="control">
+          <label for="productSelect">Choose a product</label>
+          <select id="productSelect" aria-label="Choose a product"></select>
+        </div>
+
+        <div class="control">
+          <label for="limitSelect">Load</label>
+          <select id="limitSelect" aria-label="Number of products to load">
+            <option value="10">10 products</option>
+            <option value="30" selected>30 products</option>
+            <option value="100">100 products</option>
+          </select>
+        </div>
+
+        <div class="control actions">
+          <button id="reloadBtn" type="button">Refresh List</button>
+          <button id="toggleRawBtn" type="button" aria-pressed="false">Show raw JSON</button>
+        </div>
+      </div>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+      <aside class="sidebar" aria-label="Products list">
+        <div class="sidebar-header">
+          <h2>Products</h2>
+          <div class="pill" id="countPill">0</div>
+        </div>
+        <ul id="productList" class="product-list"></ul>
+      </aside>
+
+      <section class="content" aria-label="Product details">
+        <div id="productDetails" class="details"></div>
+        <pre id="rawJson" class="raw" hidden></pre>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <small>
+         &copy; 2026 Technical Assessment 3
+      </small>
+    </footer>
+  </main>
+
+  <!-- this is the jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
